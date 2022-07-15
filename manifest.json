@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Pomodoro session",
+    "version": "0.1.0",
+    "description": "Simple user-friendly timer interface for use pomodoro method",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "icons":{
+        "128": "icon.png"
+    }
+}
