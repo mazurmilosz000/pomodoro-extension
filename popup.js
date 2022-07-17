@@ -33,7 +33,15 @@ document.getElementById("start_button").addEventListener("click", ()=>
 {
 
     const countdown_element = document.getElementById('current_time')
-    localStorage.setItem("running", true)
+
+    // todo: fix code below (how to chrome storage local set????)
+    chrome.storage.local.set({"running": true}, ()=>{
+        console.log('Timer is running!')
+    })
+
+    chrome.alarms.create("Pomodoro", {
+        periodInMinutes: 1 / 60,
+    })
 
 
     // call the function every second

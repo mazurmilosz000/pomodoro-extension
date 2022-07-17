@@ -1,13 +1,12 @@
-// chrome.alarms.create("Pomodoro", {
-//     periodInMinutes: 1 / 60,
-// })
-
-// chrome.alarms.onAlarm.addListener((alarm) => {
-//     if (alarm.name === "Pomodoro"){
-//         let timer = localStorage.get("timer")
-//         console.log(timer)
-//     }
-// })
+chrome.alarms.onAlarm.addListener((alarm) => {
+    if (alarm.name === "Pomodoro"){
+        console.log("alarm!!!!!")
+        // doesn't work properly TODO: fix code below!!!
+        chrome.storage.local.get(["running"], (res)=>{
+            console.log(res.running)
+        })
+    }
+})
 
 chrome.runtime.onInstalled.addListener(()=>{
 
