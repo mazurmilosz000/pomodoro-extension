@@ -7,7 +7,7 @@ function update_countdown(){
         let minutes = Math.floor(time / 60)
         let seconds = time % 60
 
-        // if seconds are less than 10 add 0 before
+        // if seconds & minutes are less than 10 add 0 before
         seconds = seconds < 10 ? '0' + seconds : seconds
         minutes = minutes < 10 ? '0' + minutes : minutes
 

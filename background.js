@@ -1,7 +1,6 @@
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === 'Pomodoro'){
         console.log("alarm!!!!!")
-        // doesn't work properly TODO: fix code below!!!
         chrome.storage.local.get(['running', 'time'], (res)=>{
             if(res.running){
                 let timer = res.time-1
