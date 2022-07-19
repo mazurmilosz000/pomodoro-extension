@@ -26,7 +26,3 @@ self.addEventListener('notificationclick', ()=>{
     })
 })
 
-chrome.runtime.onInstalled.addListener(()=>{
-
-    console.log("its works!")
-})
