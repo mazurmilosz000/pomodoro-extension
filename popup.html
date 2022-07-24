@@ -5,27 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <img src ="icon.png" width="48px">
-        <p class="p_title">Pomodoro timer</p>
     </header>
     <div id="time_selector">
         <p> Select time </p>
-        <button id="t_15"> 15 </button>
-        <button id="t_25"> 25 </button>
-        <button id="t_35"> 35 </button>
-        <button id="t_45"> 45 </button>
+        <button class="button" id="pomodoro"> Pomodoro </button>
+        <button class="button" id="short_b"> Short Break </button>
+        <button class="button" id="long_b"> Long Break </button>
     </div>
     <div class="timer">
         <p id ="current_time">00:00</p>
         <div id="btn">
-            <button id="start_button">START</button>
-            <button id="reset_button">RESET</button>
+            <button class="button" id="start_button">START</button>
+            <button class="button" id="reset_button">RESET</button>
         </div>
     </div>
+    <footer>
+        <div id="icons">
+            <div id="i_left">
+                <a href="https://github.com/mazurmilosz000"  target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
+                <!-- <i class="fa-solid fa-sun fa-lg"></i> -->
+                <i class="fa-solid fa-moon" id="change_mode"></i>
+            </div>
+            <div id="i_right">
+                <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank"><i class="fa-solid fa-circle-info fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
     <script src="popup.js"></script>
 </body>
 </html>

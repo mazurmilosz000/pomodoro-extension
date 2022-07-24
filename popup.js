@@ -34,35 +34,54 @@ update_countdown()
 // call the function every second
 setInterval(update_countdown, 1000)
 
-document.getElementById("t_15").addEventListener("click", () => {
+document.getElementById("pomodoro").addEventListener("click", () => {
 
-    document.getElementById('current_time').innerHTML = '15:00'
-    chrome.storage.local.set({'time': 900})
-
+    chrome.storage.local.get(['running'], (res)=>{
+        if(res.running){
+            if (confirm('Timer is running. Are you sure?')) {
+                document.getElementById('current_time').innerHTML = '25:00'
+                chrome.storage.local.set({'time': 1500, 'running': false})
+            }
+        }
+        else {
+            document.getElementById('current_time').innerHTML = '25:00'
+            chrome.storage.local.set({'time': 1500, 'running': false})
+        }
+    })
 });
 
-document.getElementById("t_25").addEventListener("click", () => {
+document.getElementById("short_b").addEventListener("click", () => {
 
-    document.getElementById('current_time').innerHTML = '25:00'
-    chrome.storage.local.set({'time': 1500})
-
-
+    chrome.storage.local.get(['running'], (res)=>{
+        if(res.running){
+            if (confirm('Timer is running. Are you sure?')) {
+                document.getElementById('current_time').innerHTML = '05:00'
+                chrome.storage.local.set({'time': 300, 'running': false})
+            }
+        }
+        else {
+            document.getElementById('current_time').innerHTML = '05:00'
+            chrome.storage.local.set({'time': 300, 'running': false})
+        }
+    })
 });
 
-document.getElementById("t_35").addEventListener("click", () => {
+document.getElementById("long_b").addEventListener("click", () => {
 
-    document.getElementById('current_time').innerHTML = '35:00'
-    chrome.storage.local.set({'time': 2100})
+    chrome.storage.local.get(['running'], (res)=>{
+        if(res.running){
+            if (confirm('Timer is running. Are you sure?')) {
+                document.getElementById('current_time').innerHTML = '15:00'
+                chrome.storage.local.set({'time': 900, 'running': false})
+            }
+        }
+        else {
+            document.getElementById('current_time').innerHTML = '15:00'
+            chrome.storage.local.set({'time': 900, 'running': false})
+        }
+    })
 
 });
-
-document.getElementById("t_45").addEventListener("click", () => {
-
-    document.getElementById('current_time').innerHTML = '45:00'
-    chrome.storage.local.set({'time': 2700})
-
-});
-
 
 
 document.getElementById("start_button").addEventListener("click", ()=>
@@ -76,4 +95,10 @@ document.getElementById("start_button").addEventListener("click", ()=>
     chrome.storage.local.get(["running"], (res)=> {
         chrome.storage.local.set({'running': !res.running})
     })
+})
+
+
+// todo: change to dark mode
+document.getElementById('change_mode').addEventListener('click', ()=>{
+    console.log('clicker')
 })

@@ -2,6 +2,10 @@ body{
     width: 300px;
     height: 400px;
     margin: 0;
+    text-align: center;
+    background-color: rgb(227, 134, 139);
+    font-family: "Righteous";
+    color: white;
 }
 .content_name{
     height: 50px;
@@ -9,16 +13,48 @@ body{
 }
 header{
     padding: 20px;
-    
-}
-.p_title{
-    font-size: 20px;
-    color: red;
-    display: inline;
-    padding-left: 20px;
+    background-color: bisque;
 }
 
 #current_time{
     font-size: 50px;
     text-decoration: solid;
 }
+
+.button {
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family:  "Righteous";
+    color: rgb(227, 134, 139);
+}
+
+.button:hover {
+    background-color: bisque;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    width: 100%;
+
+}
+
+#icons i {
+    width: 20px;
+    color: white;
+}
+
+#i_left {
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+}
+
+#i_right {
+    position: relative;
+    width: 15px;
+    right: -270px;
+}
+

@@ -9,7 +9,6 @@ chrome.alarms.onAlarm.addListener((alarm) => {
                     this.registration.showNotification('Pomodoro Timer', {
                         body: `Time's up! Click here to start 5 minute break`,
                         icon: 'icon.png',
-                        
                     })
                     chrome.storage.local.set({'running': !res.running})
 
